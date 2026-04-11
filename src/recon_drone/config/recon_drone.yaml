@@ -1,0 +1,27 @@
+namespace: recon_drone
+
+rollpitchProportionalGain: 10.0
+rollpitchDifferentialGain: 5.0
+rollpitchLimit: 0.5
+yawProportionalGain: 2.0
+yawDifferentialGain: 1.0
+yawLimit: 1.5
+velocityXYProportionalGain: 5.0
+velocityXYDifferentialGain: 2.3
+velocityXYLimit: 2
+velocityZProportionalGain: 5.0
+velocityZIntegralGain: 0.0
+velocityZDifferentialGain: 1.0
+velocityZLimit: -1
+positionXYProportionalGain: 1.0
+positionXYDifferentialGain: 0.5
+positionXYIntegralGain: 0.0
+positionXYLimit: 5
+positionZProportionalGain: 1.0
+positionZDifferentialGain: 0.5
+positionZIntegralGain: 0.0
+positionZLimit: -1
+maxForce: 30
+motionSmallNoise: 0.05
+motionDriftNoise: 0.03
+motionDriftNoiseTime: 5.0
