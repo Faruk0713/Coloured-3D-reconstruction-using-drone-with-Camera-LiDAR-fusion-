@@ -1,0 +1,54 @@
+# ~/slam_params.yaml
+# slam_toolbox config for TurtleBot3 Waffle — indoor room mapping
+# Uses the 2D base_scan LiDAR (NOT the VLP-16) for pose correction.
+# The VLP-16 is used only for 3D point collection in offline_processor.
+
+slam_toolbox:
+  ros__parameters:
+    use_sim_time: true
+
+    # Frames
+    odom_frame: odom
+    map_frame: map
+    base_frame: base_footprint
+
+    # Topic — TurtleBot3 2D scan, NOT velodyne
+    scan_topic: /scan
+
+    # Mode: mapping (builds map + corrects pose)
+    mode: mapping
+
+    # How often to update the map
+    map_update_interval: 5.0
+
+    # Scan matching
+    solver_plugin: solver_plugins::CeresSolver
+    ceres_linear_solver: SPARSE_NORMAL_CHOLESKY
+    ceres_preconditioner: SCHUR_JACOBI
+    ceres_trust_strategy: LEVENBERG_MARQUARDT
+    ceres_dogleg_type: TRADITIONAL_DOGLEG
+    ceres_loss_function: None
+
+    # Range limits — match your room size
+    max_laser_range: 8.0
+    min_laser_range: 0.1
+
+    # Update thresholds — low values = update more often = better accuracy
+    minimum_travel_distance: 0.05   # meters
+    minimum_travel_heading: 0.05    # radians (~3 degrees)
+
+    # Loop closure — critical for fixing drift after full laps
+    do_loop_closing: true
+    loop_search_maximum_distance: 4.0
+    loop_match_minimum_response_coarse: 0.35
+    loop_match_minimum_response_fine: 0.45
+
+    # Stack size for scan matching
+    stack_size_to_use: 40000000
+
+    # Occupancy grid resolution
+    resolution: 0.05
+
+    # Don't save map on each update (slow)
+    map_file_name: ''
+    map_start_at_dock: false
