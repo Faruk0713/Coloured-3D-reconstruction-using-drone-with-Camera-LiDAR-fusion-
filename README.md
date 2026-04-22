@@ -6,10 +6,12 @@ A ROS2 project that builds a coloured 3D point cloud map by fusing Camera and Li
 
 ## ⚙️ Requirements
 
-- Ubuntu 22.04
+- Ubuntu 22.04 (or WSL2 with Ubuntu 22.04 on Windows)
 - ROS2 Humble
 - Gazebo 11
 - Python 3.10+
+
+> ⚠️ **Windows users:** This project requires WSL2 (Windows Subsystem for Linux). All commands must be run inside a WSL Ubuntu 22.04 terminal, not PowerShell or CMD.
 
 ---
 
@@ -31,10 +33,9 @@ pip install open3d numpy opencv-python kiss-icp
 ## 🔧 Build
 
 ```bash
-# Clone the repo
-git clone https://github.com/Faruk0713/Coloured-3D-reconstruction-using-drone-with-Camera-LiDAR-fusion-.git
+# Clone the repo with all submodules
+git clone --recurse-submodules -b drone-ws https://github.com/Faruk0713/Coloured-3D-reconstruction-using-drone-with-Camera-LiDAR-fusion-.git
 cd Coloured-3D-reconstruction-using-drone-with-Camera-LiDAR-fusion-
-git checkout drone-ws
 
 # Install dependencies & build
 rosdep install --from-paths src --ignore-src -r -y
