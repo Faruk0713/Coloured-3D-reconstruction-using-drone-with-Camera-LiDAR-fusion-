@@ -4,3 +4,6 @@
 [submodule "src/sjtu_drone"]
 	path = src/sjtu_drone
 	url = https://github.com/NovoG93/sjtu_drone.git
+[submodule "src/Drone_Test"]
+	path = src/Drone_Test
+	url = https://github.com/TheAstrophile-KingK/Drone_Test.git
