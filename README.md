@@ -45,7 +45,7 @@ source install/setup.bash
 
 ---
 
-## 🚀 Running the Project
+## 🚀 Setting up the Project
 
 Open **4 terminals** and run one command in each. Source the workspace in each terminal first:
 ```bash
